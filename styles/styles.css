@@ -1,3 +1,38 @@
 body {
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#frame {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    border-radius: 10%;
+    padding: 2% ;
+}
+
+#display {
+    border: solid red;
+}
+
+#btnpad {
+    display: flex;
+    flex-direction: column;
+    border: solid blue;
+}
+
+.btnrow {    
+    display: flex;
+    flex-direction: row;
+    border: dotted purple;
+}
+
+.num {
+    background-color: aquamarine;
+}
+
+button {
+    border: dashed salmon;
 }
