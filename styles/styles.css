@@ -1,38 +1,84 @@
+html,
 body {
-    background-color: gray;
+   margin: 0;
+   padding: 0;
+   font-family: 'Allerta Stencil';
+   
+}
+body {
+    background-image: url(pictures/sand.jpg);
+    background-color: #cccccc;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mod {
+    flex-grow: 1;
+    min-width: 33.5%;
 }
 
 #frame {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: solid black;
-    border-radius: 10%;
+    border-radius:25px;
     padding: 2% ;
+    height: 70vh;
+    width: 40vh;
+    margin: auto;
+    background-color: whitesmoke;
 }
 
 #display {
-    border: solid red;
+    background-color: lightslategray;
+    border-radius: 4px;
+    margin-top: 4%;
+    height: 15%;
+    font-size: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 #btnpad {
     display: flex;
     flex-direction: column;
-    border: solid blue;
+    height: 70%;
+    margin-bottom: 5%;
+}
+
+#equal {
+    flex-grow: 2;
+    min-width: 48%;
 }
 
 .btnrow {    
     display: flex;
     flex-direction: row;
-    border: dotted purple;
+    height: 20%;
 }
 
 .num {
-    background-color: aquamarine;
+    background-color: rgb(255, 200, 221);
 }
 
 button {
-    border: dashed salmon;
+    height: 80%;
+    width: 25%;
+    flex-grow: 0;
+    margin: 2%;
+    border-radius: 20px;
+    font-size: 4.5vh;
+    font-family: 'Allerta Stencil';
+    background-color: rgb(189, 224, 254);
+}
+footer {
+    margin-top: auto;
+    background-color: rgb(184, 184, 184);
+    align-self: stretch;
+    text-align: center;
 }
