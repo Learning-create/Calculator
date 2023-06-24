@@ -20,6 +20,14 @@ for (button of buttons) {
             oper = undefined;
             total = undefined;
 
+        } else if (e.target.id === "corr") {
+
+            toCorr = document.getElementById("priDisplay").textContent;
+            arr = toCorr.split("");
+            arr.pop();
+            correct = arr.toString();
+            firsDis.textContent = correct;
+
         } else if (e.target.className === "num") {
 
             firsDis.textContent += e.target.id;
