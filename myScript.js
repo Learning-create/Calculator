@@ -39,6 +39,14 @@ for (button of buttons) {
 
             firsDis.textContent += e.target.id;
 
+            if (firsDis.textContent.length >= 11) {
+
+                num = Number(firsDis.textContent);
+                expon = num.toExponential(2);
+                firsDis.textContent = expon;
+                
+            }
+
         } else if (e.target.id === "add") {
 
             if (secDis.textContent !== "") {
