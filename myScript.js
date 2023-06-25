@@ -7,6 +7,7 @@ let secDis = document.getElementById("secDisplay");
 
 let buttons = document.querySelectorAll("button");
 
+
 for (button of buttons) {
 
     button.addEventListener("click", function(e) {
@@ -20,7 +21,7 @@ for (button of buttons) {
             oper = undefined;
             total = undefined;
 
-        } else if (e.target.id === "corr") {
+        } else if (e.target.id === "corr" && !firsDis.textContent.includes("a") ) {
 
             toCorr = document.getElementById("priDisplay").textContent;
             arr = toCorr.split("");
@@ -28,7 +29,13 @@ for (button of buttons) {
             correct = arr.toString();
             firsDis.textContent = correct;
 
-        } else if (e.target.className === "num") {
+        } else if (e.target.id === ".") {
+
+            if(!firsDis.textContent.includes(".")) {
+                firsDis.textContent += e.target.id;
+            }
+
+        }else if (e.target.className === "num") {
 
             firsDis.textContent += e.target.id;
 
@@ -117,9 +124,22 @@ for (button of buttons) {
 
         } else if (e.target.id === "equal") {
 
-            if (secDis.textContent !== "") {
+            secNum = document.getElementById("priDisplay").textContent;
 
-                secNum = document.getElementById("priDisplay").textContent;
+            if (secNum === "0" && oper === "/") {
+
+                firsDis.textContent = "";
+                secDis.textContent = "";
+                firNum = undefined;
+                secNum = undefined;
+                oper = undefined;
+                total = undefined;
+                firsDis.textContent = "Touch grass"
+
+
+            } else if (secDis.textContent !== "") {
+
+                
                 total = operate(firNum, oper, secNum);
                 secDis.textContent += secNum;
                 firsDis.textContent = total;
@@ -150,23 +170,26 @@ function add(num1, num2) {
     num1 = Number(num1);
     num2 = Number(num2);
     total = num1 + num2;
+    total = Math.round((total + Number.EPSILON) * 100) / 100
     return total;
 }
 
 function subs(num1, num2) {
     total = num1 - num2;
-    console.log(typeof total)
+    total = Math.round((total + Number.EPSILON) * 100) / 100
     return total;
 
 }
 
 function mult(num1, num2) {
     total = num1 * num2;
+    total = Math.round((total + Number.EPSILON) * 100) / 100
     return total;
 }
 
 function div(num1, num2) {
     total = num1 / num2;
+    total = Math.round((total + Number.EPSILON) * 100) / 100
     return total;
 }
 
